@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title> The INTRO </title>
+        <link rel="icon" href="assets/icon.png" />
+        <link href='styles/styles.css' rel="stylesheet">
+    </head>
+    <body>
+        <h1 class='center-align text-white'> Introduction </h1>
+        <hr> 
+        <img src = 'assets/map.jpg' class="left-image-align average-size-image">
+        <p class = 'text-white '>
+            Hello Traveller! Here you can see the Map of the Himalayan Range you are planning to go to. You are at
+            Pothana right now. I would suggest you to go till Low Camp and sleep there today as the wild animals 
+            can be dangerous. It's all dense forest till Low Camp. Take this 5 golds and 2 weapons. I would suggest you
+            go the shop right now to add more weapons since you might need more than 2 weapons if you were to encounter a 
+            Cheetah or something. Have a Safe Journey to the top Traveller.
+        </p>
+        <p class = 'text-white'>
+            Hey I forgot to tell you about YETI. In the map I have marked the place where people say they have seen the 
+            footprints of YETI. So be careful. Okay enough talking from me now. See you once you get back.
+        </p>
+        <hr>
+        <h3 class="text-white" > Where do you want to go?</h3>
+        <ul>
+            <li> <a id='shop' href='shop.html' class="text-blue">Shop</a></li>
+            <li> <a id='forest' href='forest.html' class="text-blue">Forest</a></li>
+        </ul>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>    
+            inventory.src += location.search;   
+            shop.href += location.search;     
+            forest.href += location.search;       
+        </script>
+    </body>
+</html>

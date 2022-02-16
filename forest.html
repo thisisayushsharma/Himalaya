@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Forest</title>
+        <link rel="icon" href="assets/icon.png" />
+        <link href='styles/styles.css' rel="stylesheet">
+    </head>
+    <body>
+        <h1 class='center-align text-white'> The Forest </h1>
+        <hr> 
+        <img src = 'assets/jungle.jpg' class="half-screen-pic">
+        <p class = 'text-white center-align'>
+            How about we find a place to stay the night? It looks like its going to get dark soon and 
+            wild animals wander a lot during the night.
+        </p>
+        <p class = 'text-white center-align'>
+            <b>So what do you want to do?</b>
+        </p>
+        <ul>
+            <li> <a id='hut' href='hut.html' class="text-blue">Go to the HUT</a></li>
+            <li> <a id='bear' href='bear.html' class="text-blue">Continue Walking</a></li>
+        </ul>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>    
+            inventory.src += location.search;   
+            hut.href += location.search;     
+            bear.href += location.search;       
+        </script>
+    </body>
+</html>

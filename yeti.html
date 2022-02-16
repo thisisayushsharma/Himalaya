@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>YETI</title>
+        <link rel="icon" href="assets/icon.png" />
+        <link href='styles/styles.css' rel="stylesheet">
+    </head>
+    <body>
+        <h1 id='names' class='center-align text-white'> YETI </h1>
+        <hr> 
+        <img id="yeti" src = 'assets/yeti.jpg' class="center">
+        <p id='battleText'class ="text-white center-align">
+            OH NO! You have encounter the YETI.<br> You have no other option than to fight it.<br>
+            I really hope you have enough weapons.<br>
+            <audio controls autoplay>
+                <source src="assets/hyena.mp3" type="audio/mpeg">
+            </audio>
+        </p>
+        <button id='fight' onclick='attack()'> Fight </button>
+
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+
+        <script> 
+            inventory.src += location.search;
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            var gobHP = 10
+            
+            function attack(){
+                gobHP -=ap;
+                if (gobHP<1){
+                    names.innerHTML = `Victoryyy`
+                    yeti.src = 'assets/ending.jpg';
+                    battleText.innerHTML = `HEYYYY! You did it. Despite all the challenges You did it.<br>
+                                            You made it to the Base Camp! CONGRATULATIONS`
+                    fight.innerHTML = `<a href='index.html'><button>Start Again</button></a>`
+                }
+                else{
+                    battleText.innerHTML = `You Died.`
+                    fight.innerHTML = `<a href='index.html'><button>Game Over</button></a>`
+                }
+            }
+        </script>
+    </body>
+</html>

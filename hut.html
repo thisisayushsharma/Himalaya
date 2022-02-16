@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>HUT</title>
+        <link rel="icon" href="assets/icon.png" />
+        <link href='styles/styles.css' rel="stylesheet">
+    </head>
+    <body>
+        <h1 class='center-align text-white'> The HUT </h1>
+        <hr> 
+        <img id="hut" src = 'assets/hut.jpg' class="average-size-image left-image-align">
+        <p id='message' class="text-white">
+            HEY! Welcome to my Little hut. I will let you shelther and even give you 10 weapons if you help me open 
+            this letter. This letter was sent by my brother and few days after he sent it he died. I believe the message
+            in this letter will help me figure out why and how did he die. My brother did read a lot about the special code that 
+            Germans read during the second World War. 
+        </p>
+        <a id = 'decrypt' href='decrypt.html'><button>Help Decrypt</button></a>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>
+            inventory.src += location.search;
+            decrypt.href += location.search;
+        </script>
+    </body>
+</html>

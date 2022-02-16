@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Decrypt</title>
+        <link rel="icon" href="assets/icon.png" />
+        <link href='styles/styles.css' rel="stylesheet">
+    </head>
+    <body>
+        <h1 class='center-align text-white'> Decrypt This </h1>
+        <hr> 
+        <img id="dawn" src = 'assets/dawn.png' class="average-size-image left-image-align">
+        <p id="message" class = "text-white">
+            The message is as follows: <br> -.. .- .-- -.<br>
+            Also, there was this image with this letter.<br>
+            <label>Enter the magic word:</label><br>
+            <input type="text" id='inputText'>
+            <input type="button" value='Submit' onClick="magicWord()">
+        </p>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>
+            inventory.src += location.search;
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            function magicWord(){
+                if (inputText.value == 'dawn'){
+                    queryString.set('ap',ap+10);
+                    dawn.src = 'assets/message.jpg';
+                    inventory.src = 'inventory.html?'+queryString;
+                    message.innerHTML =`Thank you so much for this. Here Take 10 weapons as a gift. I will finally 
+                                        get to know what happened to my brother.<br>
+                                        <a href='yeti.html?${queryString}'><button>Move deeper to the Himalayas</button></a>`
+  
+                }
+                else {
+                    message.innerHTML = (
+                        `You Die<br>
+                        <img src="assets/gameOver.gif" width="480">
+                        <p>You wrote the wrong code. GAME OVER.</p>
+                        <a href="index.html"> <h4>Game Over</h4> </a>
+                        `
+                    );
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

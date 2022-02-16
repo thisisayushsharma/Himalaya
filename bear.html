@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>BEAR</title>
+        <link rel="icon" href="assets/icon.png" />
+        <link href='styles/styles.css' rel="stylesheet">
+    </head>
+    <body>
+        <h1 class="center-align text-white">Bear Attack</h1>
+        <hr>
+        <img id='bear' src = 'assets/bear.gif' class="center">
+        <p id='battleText'class ="text-white">You have no other option than to fight the bear.<br>
+            <audio controls autoplay>
+                <source src="assets/grizzlybear.mp3" type="audio/mpeg">
+            </audio>
+        </p>
+        <button id='fight' onclick='attack()'> Fight </button>
+
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+
+        <script> 
+            inventory.src += location.search;
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            var gobHP = 3
+            
+            function attack(){
+                gobHP -=ap;
+                if (gobHP<1){
+                    bear.src = 'assets/victory.gif';
+                    queryString.set('ap',ap+3);
+                    inventory.src = 'inventory.html?'+queryString;
+                    battleText.innerHTML = `You defeated the bear and have 3 more weapons.`
+                    fight.innerHTML = `<a href='forest.html?${queryString}'><button>Go back</button></a>`
+                }
+                else{
+                    battleText.innerHTML = `You Died.${ap}`
+                    fight.innerHTML = `<a href='index.html'><button>Game Over</button></a>`
+                }
+            }
+        </script>
+    </body>
+</html>

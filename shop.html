@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title> Shop </title>
+        <link rel="icon" href="assets/icon.png" />
+        <link href='styles/styles.css' rel="stylesheet">
+    </head>
+    <body>
+        <h1 class='center-align text-white'> Shop </h1>
+        <img src = 'assets/shop.jpg' class="center small-size-image">
+        <h3 class ='center-align text-white'>I only have weapons to sell right now.</h3>
+        <div class= "text-white">
+            <button onclick='weapon()'> Weapon &#127993; <br> <i> 5 gp </i> </button>
+        </div>
+        <p>
+            <a id='exit' href='intro.html'class="text-blue">Exit</a>
+        </p>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>    
+            inventory.src += location.search;   
+            exit.href += location.search;
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");  
+
+            function weapon(){
+                if (gp >= 5 ){
+                queryString.set('gp', gp-5);
+                queryString.set('ap', ap+1);
+                location.search = queryString;
+            }
+        }
+        
+        </script>
+    </body>
+</html>

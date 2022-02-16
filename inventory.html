@@ -1,0 +1,27 @@
+<html>
+<head>
+    <link href='styles/styles.css' rel="stylesheet">
+</head>    
+<body>
+    <h4 class='text-white'>Inventory:</h4> 
+    <hr>
+<table>
+<tr>
+<th> &#128176; </th> <!-- emoji: 💰 -->
+<th> &#128156; </th> <!-- emoji: 💜 -->
+<th> &#127993; </th> <!-- emoji: 🏹 -->
+</tr>
+<tr>
+<td id='gp' class="text-white">0</td>
+<td id='hp' class="text-white">0</td>
+<td id='ap' class="text-white">0</td>
+</tr>
+</table>
+<script>
+    var queryString = new URLSearchParams(location.search);
+    gp.innerText = queryString.get("gp");
+    hp.innerText = queryString.get("hp");
+    ap.innerText = queryString.get("ap");
+</script>
+</body>
+<html>
